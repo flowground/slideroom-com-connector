@@ -1,0 +1,240 @@
+{
+    "title": "SlideRoom API V2",
+    "description": "SlideRoom provides a RESTful API for exporting data out of your organization's SlideRoom account.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/slideroom.com/v2/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.slideroom.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Applicant_DeleteAttributesV2": {
+            "main": "./lib/actions/Applicant_DeleteAttributesV2.js",
+            "title": "Deletes a custom attribute for an applicant.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Applicant_DeleteAttributesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Applicant_GetAttributesV2": {
+            "main": "./lib/actions/Applicant_GetAttributesV2.js",
+            "title": "Gets the custom attributes for an applicant.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Applicant_GetAttributesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Applicant_PostAttributesV2": {
+            "main": "./lib/actions/Applicant_PostAttributesV2.js",
+            "title": "Updates the custom attributes for an applicant.",
+            "description": "This method only adds or updates attributes. Null values will be updated as nulls, but not deleted. API Import is available in the Advanced Plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Applicant_PostAttributesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Applicant_GetAttributeNamesV2": {
+            "main": "./lib/actions/Applicant_GetAttributeNamesV2.js",
+            "title": "Gets the custom applicant attributes used by the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Applicant_GetAttributeNamesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Application_GetAttributeNamesV2": {
+            "main": "./lib/actions/Application_GetAttributeNamesV2.js",
+            "title": "Gets the custom application attributes used by the organization.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Application_GetAttributeNamesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Application_RequestExportV2": {
+            "main": "./lib/actions/Application_RequestExportV2.js",
+            "title": "Requests the generation of application export files (tabular, pdf, zip).",
+            "description": "Exports are generated asynchronously within SlideRoom.  To retrieve the export file generated by this request, use the api/v#/export/{token} endpoint to check the progress/result of the generation process.\r\n            PDF and ZIP exports are available in the Advanced Plan.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Application_RequestExportV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Application_DeleteAttributesV2": {
+            "main": "./lib/actions/Application_DeleteAttributesV2.js",
+            "title": "Deletes a custom attribute for an application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Application_DeleteAttributesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Application_GetAttributesV2": {
+            "main": "./lib/actions/Application_GetAttributesV2.js",
+            "title": "Gets the custom attributes for an application.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Application_GetAttributesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Application_PostAttributesV2": {
+            "main": "./lib/actions/Application_PostAttributesV2.js",
+            "title": "Updates the custom attributes for an application. API Import is available in the Advanced Plan.",
+            "description": "This method only adds or updates attributes. Null values will be updated as nulls, but not deleted.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Application_PostAttributesV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Application_RequestExportByApplicationIdV2": {
+            "main": "./lib/actions/Application_RequestExportByApplicationIdV2.js",
+            "title": "Requests the generation of a single application export file (tabular, pdf, zip).",
+            "description": "Exports are generated asynchronously within SlideRoom.  To retrieve the export file generated by this request, use the api/v#/export/{token} endpoint to check the progress/result of the generation process.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Application_RequestExportByApplicationIdV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Export_GetV2": {
+            "main": "./lib/actions/Export_GetV2.js",
+            "title": "Gets the status/result of a requested export.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Export_GetV2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

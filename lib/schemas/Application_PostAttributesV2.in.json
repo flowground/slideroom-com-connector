@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "additionalProperties": {
+                "type": "string"
+            },
+            "example": {
+                "name1": "Value1",
+                "name2": "Value2"
+            },
+            "type": "object"
+        }
+    }
+}

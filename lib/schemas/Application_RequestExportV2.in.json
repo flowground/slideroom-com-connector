@@ -1,0 +1,153 @@
+{
+    "type": "object",
+    "properties": {
+        "format": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "csv",
+                "tsv",
+                "txt",
+                "tab",
+                "xlsx",
+                "pdf",
+                "zip",
+                "json"
+            ]
+        },
+        "roundType": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Assigned",
+                "Current",
+                "Named",
+                "All"
+            ]
+        },
+        "roundName": {
+            "required": false,
+            "type": "string"
+        },
+        "since": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "pool": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "All",
+                "Current",
+                "Archived",
+                "CommonAppSDS"
+            ]
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "All",
+                "InProgress",
+                "Submitted"
+            ]
+        },
+        "searchName": {
+            "required": false,
+            "type": "string"
+        },
+        "email": {
+            "required": false,
+            "type": "string"
+        },
+        "tab_export": {
+            "required": false,
+            "type": "string"
+        },
+        "pdf_includeForms": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeReferences": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeMedia": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeApplicantAttachments": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeOrganizationAttachments": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeRatings": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeFullPageMedia": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeHighlights": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeComments": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pdf_includeCommonApp": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_originalMedia": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeForms": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeReferences": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeMedia": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeApplicantAttachments": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeOrganizationAttachments": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeRatings": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeComments": {
+            "required": false,
+            "type": "boolean"
+        },
+        "zip_includeCommonApp": {
+            "required": false,
+            "type": "boolean"
+        },
+        "delivery_account": {
+            "required": false,
+            "type": "string"
+        },
+        "delivery_folder": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

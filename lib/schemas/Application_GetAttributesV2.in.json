@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "applicationId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

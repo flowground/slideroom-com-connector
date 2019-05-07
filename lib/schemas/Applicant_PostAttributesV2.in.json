@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "email": {
+            "required": true,
+            "type": "string"
+        },
+        "pool": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Standard",
+                "CommonAppSDS"
+            ]
+        },
+        "commonAppYear": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "additionalProperties": {
+                "type": "string"
+            },
+            "example": {
+                "name1": "Value1",
+                "name2": "Value2"
+            },
+            "type": "object"
+        }
+    }
+}
